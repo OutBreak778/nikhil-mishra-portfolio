@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Outfit, Geist } from "next/font/google";
+import { Geist, Rajdhani } from "next/font/google";
 import "./globals.css";
+// import LoaderGate from "@/components/LoaderGate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
+const outfit = Rajdhani({
   subsets: ['latin'], // Specifies character subsets
-  weight: ['400', '700'], // Include the desired font weights
+  weight: ['400', "500",  '600', "700"], // Include the desired font weights
 });
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} antialiased tracking-tight min-h-screen ${outfit.className}`}
       >
+        {/* <LoaderGate /> */}
         {children}
       </body>
     </html>

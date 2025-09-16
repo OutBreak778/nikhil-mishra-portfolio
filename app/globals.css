@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* global.css */
+.preload-hidden * {
+  opacity: 0 !important;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

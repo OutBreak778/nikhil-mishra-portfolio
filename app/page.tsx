@@ -1,7 +1,12 @@
-export default function Home() {
+import IntroAnimation from "@/components/IntroAnimation";
+import Navbar from "@/components/Navbar";
+import LandingPage from "@/features/Home/LandingPage";
+
+export default function page() {
   return (
-    <div className="flex items-center justify-center text-6xl font-medium min-h-screen p-2 gap-3 pb-4">
-      Nikhil Mishra
+    <div className="h-screen w-full">
+      <Navbar />
+      <IntroAnimation />
     </div>
   );
 }
