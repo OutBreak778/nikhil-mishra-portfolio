@@ -1,0 +1,80 @@
+[
+  {
+    "id": "p1",
+    "title": "Helmet Detection AI",
+    "description": "Real-time helmet detection system using Faster R-CNN.",
+    "images": [
+      "/img1.jpg",
+      "/robot2.jpeg"
+    ],
+    "tags": ["AI", "Computer Vision", "PyTorch"],
+    "github": "https://github.com/OutBreak778/helmet-detection",
+    "demo": "https://google.com",
+    "featured": true
+  },
+  {
+    "id": "p2",
+    "title": "Link Analytics Dashboard",
+    "description": "I've completely enhanced your project system with the following improvements:",
+    "images": [
+      "/robot2.jpeg",
+      "/img1.jpg"
+    ],
+    "tags": ["Next.js", "MongoDB", "SaaS"],
+    "github": "https://github.com/OutBreak778/link-dashboard",
+    "demo": null,
+    "featured": false
+  },
+  {
+    "id": "p3",
+    "title": "Helmet Detection AI",
+    "description": "Real-time helmet detection system using Faster R-CNN.",
+    "images": [
+      "/img1.jpg",
+      "/robot2.jpeg"
+    ],
+    "tags": ["AI", "Computer Vision", "PyTorch"],
+    "github": "https://github.com/OutBreak778/helmet-detection",
+    "demo": "https://google.com",
+    "featured": true
+  },
+  {
+    "id": "p4",
+    "title": "Link Analytics Dashboard",
+    "description": "I've completely enhanced your project system with the following improvements:",
+    "images": [
+      "/robot2.jpeg",
+      "/img1.jpg"
+    ],
+    "tags": ["Next.js", "MongoDB", "SaaS"],
+    "github": "https://github.com/OutBreak778/link-dashboard",
+    "demo": null,
+    "featured": false
+  },
+  {
+    "id": "p5",
+    "title": "Helmet Detection AI",
+    "description": "Real-time helmet detection system using Faster R-CNN.",
+    "images": [
+      "/img1.jpg",
+      "/robot2.jpeg"
+    ],
+    "tags": ["AI", "Computer Vision", "PyTorch"],
+    "github": "https://github.com/OutBreak778/helmet-detection",
+    "demo": "https://google.com",
+    "featured": true
+  },
+  {
+    "id": "p6",
+    "title": "Link Analytics Dashboard",
+    "description": "I've completely enhanced your project system with the following improvements:",
+    "images": [
+      "/robot2.jpeg",
+      "/img1.jpg"
+    ],
+    "tags": ["Next.js", "MongoDB", "SaaS"],
+    "github": "https://github.com/OutBreak778/link-dashboard",
+    "demo": null,
+    "featured": false
+  }
+]

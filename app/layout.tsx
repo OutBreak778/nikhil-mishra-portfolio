@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Rajdhani } from "next/font/google";
 import "./globals.css";
-// import LoaderGate from "@/components/LoaderGate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,13 +25,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} antialiased tracking-tight min-h-screen ${outfit.className}`}
       >
-        {/* <LoaderGate /> */}
+        
         {children}
+        {/* <LoaderGate /> */}
       </body>
     </html>
   );
