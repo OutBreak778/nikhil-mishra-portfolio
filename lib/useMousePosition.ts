@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 const useMousePosition = () => {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
 
-  const updateMousePosition = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const updateMousePosition = (e: { clientX: any; clientY: any; }) => {
     setMousePosition({ x: e.clientX, y: e.clientY });
   };
 

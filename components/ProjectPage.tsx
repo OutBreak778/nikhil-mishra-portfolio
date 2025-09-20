@@ -12,7 +12,7 @@ const ProjectPage = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
-    gsap.utils.toArray<HTMLElement>(".hero").forEach((row, i) => {
+    gsap.utils.toArray<HTMLElement>(".hero").forEach((row) => {
       gsap.fromTo(
         row,
         { opacity: 0, y: 100 },

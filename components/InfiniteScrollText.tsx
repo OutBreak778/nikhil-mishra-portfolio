@@ -1,7 +1,6 @@
 "use client";
 
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import React, { useEffect, useRef } from "react";
 
 const InfiniteScrollText = () => {
@@ -31,6 +30,7 @@ const InfiniteScrollText = () => {
         scrub: 0.25,
         start: 0,
         end: window.innerHeight,
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         onUpdate: (e) => (direction = e.direction * -1),
       },
       x: "-500px",
