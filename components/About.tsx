@@ -50,6 +50,7 @@ const About = () => {
           {
             WebkitMaskPosition: `${x! - size / 2}px ${y! - size / 2}px`,
             WebkitMaskSize: `${size}px`,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           } as any
         } // <-- cast to any
         transition={{ type: "tween", ease: "backOut", duration: 0.7 }}
