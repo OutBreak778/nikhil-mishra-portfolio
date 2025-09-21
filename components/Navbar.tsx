@@ -9,7 +9,7 @@ const Navbar = () => {
         </div>
         <p className={`font-medium text-[30px]`}>OUTBREAK</p>
       </div>
-      <div className="w-14 h-9 border rounded-full border-[#64748B] gap-0.5 flex items-end px-2 justify-center flex-col">
+      <div className="w-14 hover:bg-black hover:invert hover:border-gray-50 transition-all duration-150 cursor-pointer h-9 border rounded-full border-[#64748B] gap-0.5 flex items-end px-2 justify-center flex-col">
         <p className="w-8 h-[1px] rounded-xl bg-[#64748B]"></p>
         <p className="w-5 h-[1px] rounded-xl bg-[#64748B]"></p>
         <p className="w-6 h-[1px] rounded-xl bg-[#64748B]"></p>

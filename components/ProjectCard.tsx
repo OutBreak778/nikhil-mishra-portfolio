@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectCardProps {
   data: {
@@ -16,122 +15,77 @@ interface ProjectCardProps {
     github: string;
     demo: string | null;
     featured: boolean;
+    slug: string;
   };
+  modal: {
+    isActive: boolean;
+    index: number;
+  };
+  setModal: Dispatch<SetStateAction<{ isActive: boolean; index: number }>>;
+  index: number;
 }
 
-export const ProjectCard = ({ data }: ProjectCardProps) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+export const ProjectCard = ({ index, data, setModal }: ProjectCardProps) => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  // Image slideshow
   useEffect(() => {
-    if (data.images.length > 1) {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % data.images.length);
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [data.images.length]);
+    const handleResize = () => setIsMobile(window.innerWidth < 768); // md breakpoint
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
+  const handleMouseEnter = () => {
+    if (!isMobile) setModal({ isActive: true, index });
+  };
+  const handleMouseLeave = () => {
+    if (!isMobile) setModal({ isActive: false, index: -1 });
+  };
   return (
-    <div className="flex flex-col lg:flex-row w-full h-[400px] md:h-[350px] lg:h-[300px] overflow-hidden hover:rounded-4xl cursor-pointer transition-all duration-200 border border-gray-800 bg-[#121212] group">
-      
-      {/* Left: Image slideshow */}
-      <div className="lg:w-1/2 relative overflow-hidden">
-        {data.images.map((image, index) => (
-          <Image
-            key={index}
-            width={1000}
-            height={1000}
-            src={image}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-            alt={`${data.title} - Image ${index + 1}`}
-          />
-        ))}
-
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-        {/* Featured Badge */}
-        {data.featured && (
-          <div className="absolute top-4 right-4">
-            <Badge
-              variant="secondary"
-              className="bg-yellow-500/90 text-black font-semibold"
-            >
-              Featured
-            </Badge>
-          </div>
-        )}
-
-        {/* Image dots */}
-        {data.images.length > 1 && (
-          <div className="absolute bottom-4 left-4 flex space-x-2">
-            {data.images.map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentImageIndex ? "bg-white" : "bg-white/40"
-                }`}
-              />
-            ))}
-          </div>
-        )}
+    <Link
+      href={`/projects/${data.slug}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave} // reset index
+      className="group relative flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto h-[350px] md:h-[200px] overflow-hidden cursor-pointer md:hover:opacity-40"
+    >
+      <div className="hidden md:flex px-4 items-center justify-between w-full tracking-tight transition-all duration-200">
+        <div className="text-7xl font-medium transition-transform duration-200 group-hover:-translate-x-2">
+          {data.title}
+        </div>
+        <div className="text-xl tracking-normal flex flex-col text-[#1b1b1b] font-medium transition-transform duration-200 group-hover:translate-x-2">
+          {data.tags.join(", ")}
+        </div>
       </div>
+      <div className="relative overflow-hidden md:hidden w-full h-full mx-2 my-2 p-3">
+        <div className="relative w-full h-48 overflow-hidden">
+          <Image
+            src={data.images[0]}
+            fill
+            alt={data.title}
+            className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-t-2xl border-2"
+          />
+        </div>
 
-      {/* Right: Content */}
-      <div className="lg:w-1/2 p-6 flex flex-col justify-start">
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+        {/* Content Section */}
+        <div className="p-4 space-y-1 border-2 -mt-0.5">
+          {/* Title */}
+          <h3 className="text-xl font-semibold text-black transition-colors duration-200 group-hover:text-gray-700">
             {data.title}
           </h3>
-          <p className="text-gray-300 text-sm leading-relaxed">
-            {data.description}
+
+          {/* Separator */}
+          <div className="w-full h-px bg-gray-300" />
+
+          {/* Description (Tags) */}
+          <p className="text-sm text-gray-600 leading-relaxed flex justify-between">
+            {data.tags.join(", ")}
+            {
+              data.featured && 
+            <Badge variant="default" className="bg-[#F59E0B] text-sm font-medium text-gray-900 rounded-md px-2 py-1">featured</Badge>
+}
           </p>
         </div>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 my-3">
-          {data.tags.map((tag, index) => (
-            <Badge
-              key={index}
-              variant="outline"
-              className="text-xs border-gray-600 text-gray-300 hover:border-blue-400 hover:text-blue-400 transition-colors"
-            >
-              {tag}
-            </Badge>
-          ))}
-        </div>
-
-        {/* Buttons */}
-        <div className="flex gap-3 pt-2">
-          <Button
-            asChild
-            size="sm"
-            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
-          >
-            <a href={data.github} target="_blank" rel="noopener noreferrer">
-              <Github className="w-4 h-4 mr-2" />
-              Code
-            </a>
-          </Button>
-
-          {data.demo && (
-            <Button
-              asChild
-              size="sm"
-              variant="outline"
-              className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white bg-transparent"
-            >
-              <a href={data.demo} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Demo
-              </a>
-            </Button>
-          )}
-        </div>
       </div>
-    </div>
+    </Link>
   );
 };

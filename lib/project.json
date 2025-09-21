@@ -1,79 +1,44 @@
-[
-  {
-    "id": "p1",
-    "title": "Helmet Detection AI",
-    "description": "Real-time helmet detection system using Faster R-CNN.",
-    "images": [
-      "/img1.jpg",
-      "/robot2.jpeg"
-    ],
-    "tags": ["AI", "Computer Vision", "PyTorch"],
-    "github": "https://github.com/OutBreak778/helmet-detection",
-    "demo": "https://google.com",
-    "featured": true
-  },
-  {
+[  {
     "id": "p2",
-    "title": "Link Analytics Dashboard",
-    "description": "I've completely enhanced your project system with the following improvements:",
-    "images": [
-      "/robot2.jpeg",
-      "/img1.jpg"
-    ],
-    "tags": ["Next.js", "MongoDB", "SaaS"],
-    "github": "https://github.com/OutBreak778/link-dashboard",
-    "demo": null,
+    "title": "Foldera CLI",
+    "slug": "foldera-cli",
+    "description": "A fast, customizable command-line tool to scaffold Node.js, Full stack and many more projects, build with purpose to automate tasks.",
+    "images": ["/foldera.png"],
+    "tags": ["Node.js", "CLI", "Productivity", "Automation"],
+    "github": "https://github.com/OutBreak778/custom-cli",
+    "demo": "https://www.npmjs.com/package/foldera",
     "featured": false
   },
   {
     "id": "p3",
-    "title": "Helmet Detection AI",
-    "description": "Real-time helmet detection system using Faster R-CNN.",
-    "images": [
-      "/img1.jpg",
-      "/robot2.jpeg"
-    ],
-    "tags": ["AI", "Computer Vision", "PyTorch"],
-    "github": "https://github.com/OutBreak778/helmet-detection",
-    "demo": "https://google.com",
+    "title": "Fetchout API",
+    "slug": "fetchout-api",
+    "description": "Developer-friendly API hub with login, secure API keys, and ready-to-use public APIs (weather, jokes, etc.).",
+    "images": ["/api.png"],
+    "tags": ["API", "Node.js", "React.js", "Express", "Security"],
+    "github": "https://github.com/OutBreak778/fetchout-api",
+    "demo": "https://fetchout-api.vercel.app",
     "featured": true
   },
   {
     "id": "p4",
-    "title": "Link Analytics Dashboard",
-    "description": "I've completely enhanced your project system with the following improvements:",
-    "images": [
-      "/robot2.jpeg",
-      "/img1.jpg"
-    ],
-    "tags": ["Next.js", "MongoDB", "SaaS"],
-    "github": "https://github.com/OutBreak778/link-dashboard",
-    "demo": null,
-    "featured": false
-  },
-  {
-    "id": "p5",
-    "title": "Helmet Detection AI",
-    "description": "Real-time helmet detection system using Faster R-CNN.",
-    "images": [
-      "/img1.jpg",
-      "/robot2.jpeg"
-    ],
-    "tags": ["AI", "Computer Vision", "PyTorch"],
-    "github": "https://github.com/OutBreak778/helmet-detection",
-    "demo": "https://google.com",
+    "title": "Pinterest Clone",
+    "slug": "pinterest-clone",
+    "description": "Full-stack Pinterest inspired app with JWT auth, image sharing, user profiles, protected routes.",
+    "images": ["/pinterest.png"],
+    "tags": ["React", "Node.js", "Express", "MongoDB"],
+    "github": "https://github.com/OutBreak778/pinterest-clone",
+    "demo": "https://pinterest-clone-lime-nu.vercel.app",
     "featured": true
   },
   {
-    "id": "p6",
-    "title": "Link Analytics Dashboard",
-    "description": "I've completely enhanced your project system with the following improvements:",
-    "images": [
-      "/robot2.jpeg",
-      "/img1.jpg"
-    ],
-    "tags": ["Next.js", "MongoDB", "SaaS"],
-    "github": "https://github.com/OutBreak778/link-dashboard",
+    "id": "p9",
+    "title": "Rate Limit API",
+    "slug": "rate-limit-api",
+    "description": "Node.js API rate limiter with authentication, validity checks, and secure access.",
+    "images": ["/rate-limit.png"],
+    "tags": ["Node.js", "API", "Security"],
+    "github": "https://github.com/OutBreak778/rate-limit-api",
     "demo": null,
     "featured": false
   }
