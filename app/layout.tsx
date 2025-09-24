@@ -32,11 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} antialiased tracking-tight min-h-screen ${outfit.className}`}
       >
-        <AnimateTransition>
+        {/* <AnimateTransition> */}
           <Navbar />
 
           {children}
-        </AnimateTransition>
+        {/* </AnimateTransition> */}
       </body>
     </html>
   );

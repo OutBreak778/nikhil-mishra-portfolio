@@ -71,7 +71,7 @@ const NavRoute = () => {
 
         {/* FOOTER */}
         <div className="text-2xl font-sans tracking-tighter text-muted-foreground border-t border-neutral-600 pt-4 flex">
-          <span className="font-light mr-2">© OUTBREAK</span> {currentTime}
+          <span className="font-light mr-2">©</span> {currentTime}
         </div>
       </div>
       <SVG />

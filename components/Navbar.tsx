@@ -64,7 +64,7 @@ const Navbar = () => {
             y1="6"
             x2="40"
             y2="6"
-            stroke={isActive ? "black" : "white"}
+            stroke="black"
             strokeWidth="2"
             className={`transition-transform duration-300 text-white origin-center ${
               isActive ? "translate-y-[4px] rotate-45" : ""
@@ -75,7 +75,7 @@ const Navbar = () => {
             y1="14"
             x2="40"
             y2="14"
-            stroke={isActive ? "black" : "white"}
+            stroke="black"
             strokeWidth="2"
             className={`transition-transform duration-300 origin-center ${
               isActive ? "-translate-y-[4px] -rotate-45" : ""

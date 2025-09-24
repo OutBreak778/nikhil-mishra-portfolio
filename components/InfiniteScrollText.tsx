@@ -48,9 +48,9 @@ const InfiniteScrollText = () => {
 
     return () => {
       if (rafId.current !== null) {
-        cancelAnimationFrame(rafId.current); 
+        cancelAnimationFrame(rafId.current);
       }
-      gsap.killTweensOf(sliderCurr);  
+      gsap.killTweensOf(sliderCurr);
     };
   }, []);
 
@@ -65,15 +65,13 @@ const InfiniteScrollText = () => {
             ref={firstText}
             className="relative m-0 text-[10vw] md:text-[8vw] font-bold pr-12 inline-block"
           >
-            About me - Full stack developer - Node.js & Next.js - Python & AI/ML
-            -
+            Full Stack Developer • Node.js | Next.js • Python | AI & ML •
           </p>
           <p
             ref={secondText}
-            className="absolute left-[287%] md:left-[228%] top-0 m-0 text-[10vw] md:text-[8vw] font-bold pr-1 inline-block -ml-12"
+            className="absolute left-[287%] md:left-[192%] top-0 m-0 text-[10vw] md:text-[8vw] font-bold pr-1 inline-block -ml-12"
           >
-            About me - Full stack developer - Node.js & Next.js - Python & AI/ML
-            -
+            Full Stack Developer • Node.js | Next.js • Python | AI & ML • -
           </p>
         </div>
       </div>
