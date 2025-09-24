@@ -4,17 +4,34 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 
 const InfiniteScrollText = () => {
-  const firstText = useRef(null);
-  const secondText = useRef(null);
-  const slider = useRef(null);
-
-  const infiniteRef = useRef(null)
+  const firstText = useRef<HTMLParagraphElement | null>(null);
+  const secondText = useRef<HTMLParagraphElement | null>(null);
+  const slider = useRef<HTMLDivElement | null>(null);
+  const infiniteRef = useRef<HTMLElement | null>(null);
 
   let xPercent = 0;
   let direction = 1;
+  const rafId = useRef<number | null>(null); // ✅ persist between renders
+
+  const animation = () => {
+    if (!firstText.current || !secondText.current) return; // ✅ Guard
+
+    if (xPercent < -100) {
+      xPercent = 0;
+    } else if (xPercent > 0) {
+      xPercent = -100;
+    }
+
+    gsap.set(firstText.current, { xPercent: xPercent });
+    gsap.set(secondText.current, { xPercent: xPercent });
+
+    xPercent += 0.04 * direction;
+    rafId.current = requestAnimationFrame(animation);
+  };
 
   useEffect(() => {
- 
+    if (!slider.current || !infiniteRef.current) return;
+    const sliderCurr = slider.current;
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: infiniteRef.current,
@@ -27,25 +44,21 @@ const InfiniteScrollText = () => {
       x: "-500px",
     });
 
-    requestAnimationFrame(animation);
+    rafId.current = requestAnimationFrame(animation);
+
+    return () => {
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current); 
+      }
+      gsap.killTweensOf(sliderCurr);  
+    };
   }, []);
 
-  const animation = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
-      xPercent = -100;
-    }
-
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
-
-    requestAnimationFrame(animation);
-    xPercent += 0.04 * direction;
-  };
-
   return (
-    <main ref={infiniteRef} className="relative flex h-[80px] md:h-[175px] overflow-hidden text-gray-50 bg-black border-t-2 border-b-2">
+    <main
+      ref={infiniteRef}
+      className="relative flex h-[80px] md:h-[175px] overflow-hidden text-gray-50 bg-black border-t-2 border-b-2"
+    >
       <div className="absolute w-full">
         <div ref={slider} className="relative whitespace-nowrap">
           <p

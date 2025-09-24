@@ -5,21 +5,26 @@ import { gsap } from "gsap";
 
 const IntroAnimation = () => {
   useEffect(() => {
-    const titles = gsap.utils.toArray(".textRef");
-    if (!titles) return;
-    gsap.from(titles, {
-      yPercent: 40,
-      delay: 0.8,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
+    const ctx = gsap.context(() => {
+      const titles = gsap.utils.toArray(".textRef");
+      if (!titles) return;
+      gsap.from(titles, {
+        yPercent: 40,
+        delay: 1.5,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+      });
+
     });
+
+    return () => ctx.revert(); // ✅ kills all animations on unmount
   }, []);
 
   return (
-    <div className="mb-20 flex flex-col justify-between w-full overflow-hidden items-start bg-gradient-to-b from-white via-[#FAFAF9] to-white text-[#222939]">
-      <div className="flex flex-col mt-10 md:mt-16 lg:mt-8">
+    <div className="flex flex-col justify-between w-full overflow-hidden items-start bg-gradient-to-b from-white via-[#FAFAF9] to-white text-[#222939]">
+      <div className="flex flex-col mt-10">
         <div className="textRef text-[clamp(3rem,5.7vw,7rem)] text-[#1C1917] font-semibold ml-6">
           NIKHIL MISHRA
         </div>
@@ -28,7 +33,7 @@ const IntroAnimation = () => {
         </div>
       </div>
 
-      <div className="w-52 h-52 absolute right-1/4 rounded-full bg-[#F59E0B] blur-[170px] z-0" />
+      <div className="textRef w-52 h-52 absolute right-1/4 rounded-full bg-[#F59E0B] blur-[170px]" />
 
       <div className="flex flex-row w-full mt-10 md:mt-14 lg:mt-12 items-end justify-between">
         <div className="flex flex-row items-center justify-between w-full">
@@ -45,12 +50,12 @@ const IntroAnimation = () => {
             </div>
 
             <div className="flex flex-col items-center">
-              <div className="textRef hidden md:flex flex-col items-center -mt-28 lg:-mt-32 mr-5 text-[#64748B] font-medium text-[clamp(0.9rem,1.5vw,1.25rem)]">
+              <div className="textRef hidden md:flex flex-col items-center -mt-28 lg:-mt-32 text-[#64748B] font-medium text-[clamp(0.9rem,1.5vw,1.25rem)]">
                 <p>STUDENT</p>
                 <p>WEBSITES</p>
                 <p>UI/UX</p>
               </div>
-              <div className="group textRef flex flex-row justify-between items-center gap-x-4 rounded-full text-[#1C1917] bg-[#F59E0B] font-medium px-4 py-2 mt-6 md:mt-8 mr-5">
+              <div className="group textRef flex flex-row justify-between items-center gap-x-4 rounded-full text-[#1C1917] bg-[#fdaf29] font-medium px-4 py-2 mt-6 md:mt-8">
                 <p>LET&apos;S TALK</p>
                 {/* <ArrowDownRight className="w-5 h-5 -rotate-[24deg] group-hover:-rotate-45" /> */}
                 <svg
@@ -79,7 +84,7 @@ const IntroAnimation = () => {
         BUILDING IDEAS THAT LIVES ON WEB
       </div>
 
-      <div className="textRef fixed right-4 bottom-4 h-12 p-1 border border-gray-700 rounded-full z-50">
+      <div className="textRef fixed right-4 bottom-4 h-12 p-1 border border-gray-700 rounded-full">
         {/* <ArrowDown className="w-5 h-10" /> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +98,6 @@ const IntroAnimation = () => {
             strokeLinejoin="round"
             strokeWidth={1}
             d="M12 4V20M12 20L18 14M12 20L6 14"
-            className="invert"
           />
         </svg>
       </div>

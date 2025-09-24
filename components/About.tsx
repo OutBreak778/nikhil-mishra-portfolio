@@ -28,10 +28,10 @@ const About = () => {
   return (
     <div
       ref={slideRef}
-      className="slideRef max-w-full mx-auto transition-all duration-400 h-full bg-black text-gray-50 md:my-2 Z-10 md:pb-0"
+      className="slideRef max-w-full mx-auto transition-all duration-400 h-full bg-black text-gray-50 z-10 mb-52"
     >
       <motion.div
-        className="mask text-3xl md:text-5xl w-full md:px-2 px-6 h-full flex items-center justify-center cursor-context-menu"
+        className="mask text-4xl md:text-[57px] md:leading-16 w-full md:px-2 px-6 h-full flex items-center justify-center cursor-context-menu"
         animate={
           {
             WebkitMaskPosition: `${x! - size / 2}px ${y! - size / 2}px`,
@@ -42,7 +42,7 @@ const About = () => {
         transition={{ type: "tween", ease: "backOut", duration: 0.7 }}
       >
         <p
-          className="w-[1000px] font-medium md:mt-0"
+          className="w-[1000px] font-medium md:mt-0 py-24"
           onMouseEnter={() => {
             setIsHovered(true);
           }}
@@ -57,8 +57,8 @@ const About = () => {
           efficient, scalable, and intuitive.
         </p>
       </motion.div>
-      <div className="w-full text-3xl md:text-5xl h-full md:px-2 px-6 flex items-center justify-center cursor-context-menu">
-        <p className="w-[1000px] font-medium mt-24 md:mt-0">
+      <div className="w-full text-4xl md:text-[57px] md:leading-16 h-full md:px-2 px-6 flex items-center justify-center cursor-context-menu">
+        <p className="w-[1000px] font-medium md:mt-0 py-24">
           Hi, I’m{" "}
           <span className="text-[#F59E0B] font-bold">NIKHIL MISHRA</span> — a
           Master’s student specializing in{" "}

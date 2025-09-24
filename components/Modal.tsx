@@ -47,37 +47,18 @@ const scaleAnimation = {
 export default function Modal({ modal, projects }: ModalProps) {
   const { isActive, index } = modal;
   const modalContainer = useRef(null);
-  const cursor = useRef(null);
-  const cursorLabel = useRef(null);
 
   useEffect(() => {
-    if (!isActive || index === -1) return;
+    if (!isActive || index === -1 || !modalContainer.current) return;
 
-    //Move Container
-    const xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
+    const modalEl = modalContainer.current;
+
+    const xMoveContainer = gsap.quickTo(modalEl, "left", {
       duration: 0.8,
       ease: "power3",
     });
-    const yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
+    const yMoveContainer = gsap.quickTo(modalEl, "top", {
       duration: 0.8,
-      ease: "power3",
-    });
-    //Move cursor
-    const xMoveCursor = gsap.quickTo(cursor.current, "left", {
-      duration: 0.5,
-      ease: "power3",
-    });
-    const yMoveCursor = gsap.quickTo(cursor.current, "top", {
-      duration: 0.5,
-      ease: "power3",
-    });
-    //Move cursor label
-    const xMoveCursorLabel = gsap.quickTo(cursorLabel.current, "left", {
-      duration: 0.45,
-      ease: "power3",
-    });
-    const yMoveCursorLabel = gsap.quickTo(cursorLabel.current, "top", {
-      duration: 0.45,
       ease: "power3",
     });
 
@@ -85,10 +66,6 @@ export default function Modal({ modal, projects }: ModalProps) {
       const { pageX, pageY } = e;
       xMoveContainer(pageX);
       yMoveContainer(pageY);
-      xMoveCursor(pageX);
-      yMoveCursor(pageY);
-      xMoveCursorLabel(pageX);
-      yMoveCursorLabel(pageY);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -96,6 +73,7 @@ export default function Modal({ modal, projects }: ModalProps) {
     // cleanup
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      gsap.killTweensOf([modalEl]); // ✅ Cleanup
     };
   }, [isActive, index]);
 
@@ -130,23 +108,7 @@ export default function Modal({ modal, projects }: ModalProps) {
           </div>
         )}
       </motion.div>
-
-      {/* <motion.div
-        ref={cursor}
-        className="h-24 w-24 rounded-full bg-[#455CE3] text-white absolute flex items-center justify-center text-lg font-medium"
-        variants={scaleAnimation}
-        initial="initial"
-        animate={isActive ? "enter" : "closed"}
-      ></motion.div>
-      <motion.div
-        ref={cursorLabel}
-        className="w-24 h-24 rounded-full bg-transparent text-white absolute flex items-center justify-center text-lg font-medium"
-        variants={scaleAnimation}
-        initial="initial"
-        animate={isActive ? "enter" : "closed"}
-      >
-        View
-      </motion.div> */}
+ 
     </>
   );
 }

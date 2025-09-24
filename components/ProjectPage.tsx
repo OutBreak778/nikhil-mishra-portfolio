@@ -29,7 +29,7 @@ const ProjectPage = () => {
             start: "top 90%",
             toggleActions: "play none none reverse",
           },
-          // delay: i * 0.1, // small stagger effect per row
+          // delay: i * 0.1, 
         }
       );
     });
@@ -38,7 +38,7 @@ const ProjectPage = () => {
   return (
     <div className="w-full h-auto mt-36 text-[#1c1c1c] py-4 overflow-y-hidden">
       <div className="lg:text-[82px] md:text-end text-6xl md:text-7xl my-24 text-center md:px-36">
-        <span className="font-semibold text-gray-900  w-full text-end rounded-full px-8">
+        <span className="font-semibold text-gray-900 w-full text-end rounded-full px-8">
         PROJECTS
         </span>
       </div>
@@ -59,9 +59,8 @@ const ProjectPage = () => {
           />
         ))}
         <Modal modal={modal} projects={project} />
-      </div>
 
-      <div className="flex items-end justify-end text-5xl my-20 pr-2 group">
+      <div className="flex items-end justify-end text-5xl my-20 md:-mr-24 mr-4 group">
         <Link
           href="/projects"
           className="flex group-hover:scale-105 transition-all duration-200"
@@ -83,6 +82,8 @@ const ProjectPage = () => {
           </svg>
         </Link>
       </div>
+      </div>
+
     </div>
   );
 };
