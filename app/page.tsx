@@ -3,7 +3,6 @@ import InfiniteScrollText from "@/components/InfiniteScrollText";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import ProjectPage from "@/components/ProjectPage";
-import Footer from "@/components/Footer";
 
 export default function page() {
   return (
@@ -14,7 +13,6 @@ export default function page() {
       <ProjectPage />
       <InfiniteScrollText />
       <Skills />
-      <Footer />
     </div>
     </>
 

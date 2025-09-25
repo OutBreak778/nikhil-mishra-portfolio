@@ -2,14 +2,15 @@ import { cn } from "@/lib/utils";
 import React from "react";
 const Skills = () => {
   return (
-    <div className="max-w-[90rem] w-full mx-auto mt-24 mb-10 px-6 pb-12"> {/* PB keeps footer safe */}
+    <div className="max-w-[90rem] w-full mx-auto mt-24 mb-10 px-6 pb-12">
+      {" "}
+      {/* PB keeps footer safe */}
       <div>
         <h1 className="uppercase text-6xl font-semibold">My Skills</h1>
         <p className="text-muted-foreground text-xl font-medium -mt-2 mb-4">
           From UI to backend, AI experiments to real-world websites
         </p>
       </div>
-
       {/* TOP ROW: 3-column bento — use auto-rows so each column cell equals height */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:[grid-auto-rows:1fr] mb-3">
         <CardWrapper hover="hover:bg-red-500/80 hover:text-white">
@@ -66,7 +67,6 @@ const Skills = () => {
           />
         </CardWrapper>
       </div>
-
       {/* BOTTOM ROW: 2-column row — also equalized heights with auto-rows */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:[grid-auto-rows:1fr]">
         <CardWrapper hover="hover:bg-violet-500/70 hover:text-white">
@@ -94,7 +94,7 @@ const Skills = () => {
 
         <CardWrapper hover="hover:bg-blue-500/70 hover:text-white">
           <SkillCards
-            title="AI & ML (learning)"
+            title="AI & ML — Projects & Experiments"
             skills={[
               "python",
               "Pandas",
@@ -103,7 +103,10 @@ const Skills = () => {
               "Computer vision",
               "Model Training",
             ]}
-            expandedDetails={["Still in Learning phase..."]}
+            expandedDetails={[
+              "Simple Image Classifier — build it on google colab to classify the person image happy or not",
+              "Data preprocessing scripts & EDA — GitHub",
+            ]}
           />
         </CardWrapper>
       </div>

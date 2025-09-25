@@ -61,6 +61,7 @@ const Footer = () => {
                 src="/github-logo.svg"
                 height={20}
                 width={20}
+                loading="lazy"
                 className="bg-white p-[2px] rounded-[3px]"
                 alt="linkedin"
               />
@@ -73,6 +74,7 @@ const Footer = () => {
               <Image
                 src="/linked.svg"
                 height={20}
+                loading="lazy"
                 width={20}
                 className="bg-white p-[2px] rounded-[3px]"
                 alt="linkedin"
@@ -82,6 +84,7 @@ const Footer = () => {
             <Link href="https://leetcode.com/u/OutBreak_code01/" target="_blank">
             <Image
               alt="leetcode"
+                loading="lazy"
               src="/leetcode.svg"
               className="bg-white p-[2px] rounded-[3px]"
               height={20}

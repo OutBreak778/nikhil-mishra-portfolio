@@ -16,7 +16,7 @@ interface ModalProps {
     description?: string;
     images: string[];
     tags?: string[];
-    github?: string;
+    github?: string | null;
     demo?: string | null;
     featured?: boolean;
   }[];
@@ -100,6 +100,8 @@ export default function Modal({ modal, projects }: ModalProps) {
                   src={project.images[0]}
                   width={260}
                   height={0}
+                loading="lazy"
+
                   alt={"img"}
                   className="h-auto object-cover"
                 />

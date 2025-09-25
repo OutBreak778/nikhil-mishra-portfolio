@@ -9,6 +9,7 @@ import Link from "next/link";
 import project from "../lib/project.json";
 import Modal from "./Modal";
 import { MagneticCursor } from "./MagneticCursor";
+// import { MagneticCursor } from "./MagneticCursor";
 
 const ProjectPage = () => {
   const [modal, setModal] = useState({ isActive: false, index: 0 });
@@ -37,19 +38,15 @@ const ProjectPage = () => {
   }, []);
 
   return (
-    <div className="w-full relative h-auto text-[#1c1c1c] py-12 overflow-y-hidden mt-48">
-      {/* <span className="font-semibold text-gray-900 w-full text-end rounded-full px-8">
-        PROJECTS
-        </span> */}
-        <div className="absolute max-w-6xl mx-auto right-[155px]">
-      <MagneticCursor>
-          <div className="bg-[#F59E0B] h-48 w-48 rounded-full flex items-center justify-center text-[40px] font-semibold text-white">
+    <div className="w-full h-auto mt-44 text-[#1c1c1c] py-4 overflow-y-hidden">
+      <div className="lg:text-[82px] md:text-end text-6xl md:text-7xl my-24 text-center md:px-2 max-w-6xl mx-auto flex justify-center md:justify-end mt-8">
+        <MagneticCursor>
+          <span className="bg-[#F59E0B] cursor-context-menu h-48 w-48 rounded-full flex items-center justify-center text-[40px] font-semibold text-white">
             PROJECTS
-          </div>
-      </MagneticCursor>
-        </div>
-
-      <div className="mt-64 divide-y-2 max-w-6xl mx-auto border-t-2 py-2 divide-gray-300/80">
+          </span>
+        </MagneticCursor>
+      </div>
+      <div className="mt-12 divide-y-2 max-w-6xl mx-auto border-t-2 py-2 divide-gray-300/80">
         <p className="divide-none border-none -mt-12 text-xl text-muted-foreground ml-12">
           Recent Works
         </p>
@@ -64,16 +61,16 @@ const ProjectPage = () => {
         ))}
         <Modal modal={modal} projects={project} />
 
-        <div className="flex items-end justify-end text-5xl my-20 md:-mr-24 mr-4 group">
+        <div className="flex items-end justify-end text-4xl mb-20 mt-12 md:-mr-24 mr-4 group">
           <Link
             href="/projects"
             className="flex group-hover:scale-105 transition-all duration-200"
           >
-            VIEW MORE
+            ALL PROJECTS
             <svg
               viewBox="0 0 24 24"
               fill="none"
-              className="w-12 h-12 ml-4"
+              className="w-10 h-10 ml-4"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

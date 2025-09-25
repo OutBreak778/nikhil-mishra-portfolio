@@ -1,9 +1,9 @@
 "use client";
 
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { Badge } from "./ui/badge";
 import Link from "next/link";
 import Image from "next/image";
+import { ExternalLink, Github } from "lucide-react";
 
 interface ProjectCardProps {
   data: {
@@ -12,7 +12,7 @@ interface ProjectCardProps {
     description: string;
     images: string[];
     tags: string[];
-    github: string;
+    github: string | null;
     demo: string | null;
     featured: boolean;
     slug: string;
@@ -41,6 +41,14 @@ export const ProjectCard = ({ index, data, setModal }: ProjectCardProps) => {
   const handleMouseLeave = () => {
     if (!isMobile) setModal({ isActive: false, index: -1 });
   };
+
+  const openExternal = (e: React.MouseEvent, url: string | null) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (!url) return;
+    // open in new tab, avoid Next router which might interfere for external host
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   return (
     <Link
       href={`/projects/${data.slug}`}
@@ -48,32 +56,32 @@ export const ProjectCard = ({ index, data, setModal }: ProjectCardProps) => {
       onMouseLeave={handleMouseLeave} // reset index
       className="group relative flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto h-[350px] md:h-[200px] overflow-hidden cursor-pointer md:hover:opacity-40"
     >
-      <div className="hidden md:flex px-4 items-center justify-between w-full tracking-normal transition-all duration-300">
+      <div className="hidden md:flex px-4 items-center justify-between w-full tracking-normal transition-all duration-300 hover:shadow-md">
         <div className="text-[80px] font-semibold transition-transform duration-700 group-hover:-translate-x-2">
           {data.title}
-          {
-            data.featured && 
-          <span className="absolute left-0 bottom-6 h-1 w-full bg-[#F59E0B] rounded-full scale-x-0 group-hover:scale-x-100 duration-300 transition-transform origin-left"></span>
-          }
+          {data.featured && (
+            <span className="absolute left-0 bottom-6 h-1 w-full bg-[#F59E0B] rounded-full scale-x-0 group-hover:scale-x-100 duration-300 transition-transform origin-left"></span>
+          )}
         </div>
         <div className="text-xl tracking-normal flex flex-col text-[#1b1b1b] font-medium transition-transform duration-200 group-hover:translate-x-2">
           {data.tags.join(", ")}
         </div>
       </div>
-      <div className="relative overflow-hidden md:hidden w-full h-full mx-2 my-2 p-3">
+      <div className="relative group overflow-hidden md:hidden w-full h-full mx-2 my-2 p-3 hover:shadow-md">
         <div className="relative w-full h-48 overflow-hidden">
           <Image
             src={data.images[0]}
             fill
+            loading="lazy"
             alt={data.title}
             className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-t-2xl border-2"
           />
         </div>
 
         {/* Content Section */}
-        <div className="p-4 space-y-1 border-2 -mt-0.5">
+        <div className="p-4 space-y-1 border-2">
           {/* Title */}
-          <h3 className="text-xl font-semibold text-black transition-colors duration-200 group-hover:text-gray-700">
+          <h3 className="text-xl font-semibold group-hover:text-[25px] transition-all duration-300 text-black group-hover:text-gray-700">
             {data.title}
           </h3>
 
@@ -81,19 +89,48 @@ export const ProjectCard = ({ index, data, setModal }: ProjectCardProps) => {
           <div className="w-full h-px bg-gray-300" />
 
           {/* Description (Tags) */}
-          <p className="text-sm text-gray-600 leading-relaxed flex justify-between">
+          <p className="text-sm text-gray-600 leading-relaxed line-clamp-1">
             {data.description}
-            {data.featured && (
-              <Badge
-                variant="default"
-                className="bg-[#F59E0B] text-sm font-medium text-gray-900 rounded-md px-2 py-1"
-              >
-                featured
-              </Badge>
-            )}
           </p>
+          <div className="flex w-full space-x-3">
+            <div className="w-full h-7">
+              {data.demo ? (
+                <div
+                  onClick={(e) => openExternal(e, data.demo)}
+                  className="bg-blue-500 text-white text-md font-semibold px-2 p-1 rounded-md flex items-center justify-center"
+                >
+                  <ExternalLink className="w-[18px] h-[18px] mr-2" />
+                  Visit Live
+                </div>
+              ) : (
+                <div className="bg-blue-500/40 cursor-not-allowed text-white text-md font-semibold px-2 p-1 rounded-md flex items-center justify-center">
+                  <ExternalLink className="w-[18px] h-[18px] mr-2" />
+                  Visit Live
+                </div>
+              )}
+            </div>
+            <div className="w-full h-7">
+              {data.github ? (
+                <div
+                  onClick={(e) => openExternal(e, data.github)}
+                  popoverTarget="abc"
+                  popoverTargetAction="show"
+                  className="bg-blue-500 text-white text-md font-semibold px-2 p-1 rounded-md flex items-center justify-center"
+                >
+                  <Github className="w-[18px] h-[18px] mr-2" />
+                  Github
+                </div>
+              ) : (
+                <div className="bg-blue-500/40 cursor-not-allowed text-white text-md font-semibold px-2 p-1 rounded-md flex items-center justify-center">
+                  <Github className="w-[18px] h-[18px] mr-2" />
+                  Github
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </Link>
   );
 };
+
