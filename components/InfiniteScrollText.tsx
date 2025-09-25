@@ -69,7 +69,7 @@ const InfiniteScrollText = () => {
           </p>
           <p
             ref={secondText}
-            className="absolute left-[287%] md:left-[192%] top-0 m-0 text-[10vw] md:text-[8vw] font-bold pr-1 inline-block -ml-12"
+            className="absolute left-[243%] md:left-[192%] top-0 m-0 text-[10vw] md:text-[8vw] font-bold pr-1 inline-block -ml-12"
           >
             Full Stack Developer • Node.js | Next.js • Python | AI & ML • -
           </p>

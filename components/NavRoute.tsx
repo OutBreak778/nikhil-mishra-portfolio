@@ -47,7 +47,7 @@ const NavRoute = () => {
   return (
     <motion.div
       {...anim(menuSlide)}
-      className="fixed right-0 top-0 h-screen w-full md:w-[40%] bg-black text-white z-30"
+      className="fixed right-0 top-0 h-screen w-full md:w-[50%] bg-black text-white z-30"
     >
       <div className="flex h-full flex-col justify-between p-10">
         <div

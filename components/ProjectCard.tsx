@@ -48,9 +48,13 @@ export const ProjectCard = ({ index, data, setModal }: ProjectCardProps) => {
       onMouseLeave={handleMouseLeave} // reset index
       className="group relative flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto h-[350px] md:h-[200px] overflow-hidden cursor-pointer md:hover:opacity-40"
     >
-      <div className="hidden md:flex px-4 items-center justify-between w-full tracking-tight transition-all duration-200">
-        <div className="text-7xl font-medium transition-transform duration-200 group-hover:-translate-x-2">
+      <div className="hidden md:flex px-4 items-center justify-between w-full tracking-normal transition-all duration-300">
+        <div className="text-[80px] font-semibold transition-transform duration-700 group-hover:-translate-x-2">
           {data.title}
+          {
+            data.featured && 
+          <span className="absolute left-0 bottom-6 h-1 w-full bg-[#F59E0B] rounded-full scale-x-0 group-hover:scale-x-100 duration-300 transition-transform origin-left"></span>
+          }
         </div>
         <div className="text-xl tracking-normal flex flex-col text-[#1b1b1b] font-medium transition-transform duration-200 group-hover:translate-x-2">
           {data.tags.join(", ")}
@@ -78,11 +82,15 @@ export const ProjectCard = ({ index, data, setModal }: ProjectCardProps) => {
 
           {/* Description (Tags) */}
           <p className="text-sm text-gray-600 leading-relaxed flex justify-between">
-            {data.tags.join(", ")}
-            {
-              data.featured && 
-            <Badge variant="default" className="bg-[#F59E0B] text-sm font-medium text-gray-900 rounded-md px-2 py-1">featured</Badge>
-}
+            {data.description}
+            {data.featured && (
+              <Badge
+                variant="default"
+                className="bg-[#F59E0B] text-sm font-medium text-gray-900 rounded-md px-2 py-1"
+              >
+                featured
+              </Badge>
+            )}
           </p>
         </div>
       </div>

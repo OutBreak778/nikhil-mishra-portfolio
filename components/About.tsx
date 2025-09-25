@@ -28,7 +28,7 @@ const About = () => {
   return (
     <div
       ref={slideRef}
-      className="slideRef max-w-full mx-auto transition-all duration-400 h-full bg-black text-gray-50 z-10 mb-52"
+      className="slideRef max-w-full mx-auto transition-all duration-400 h-full bg-black text-gray-50 z-10"
     >
       <motion.div
         className="mask text-4xl md:text-[57px] md:leading-16 w-full md:px-2 px-6 h-full flex items-center justify-center cursor-context-menu"

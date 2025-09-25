@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import { MagneticCursor } from "./MagneticCursor";
 
 const IntroAnimation = () => {
   useEffect(() => {
@@ -25,9 +26,11 @@ const IntroAnimation = () => {
   return (
     <div className="flex flex-col justify-between w-full overflow-hidden items-start bg-gradient-to-b from-white via-[#FAFAF9] to-white text-[#222939]">
       <div className="flex flex-col mt-10">
+        <MagneticCursor>
         <div className="textRef text-[clamp(3rem,5.7vw,7rem)] text-[#1C1917] font-semibold ml-6">
           NIKHIL MISHRA
         </div>
+        </MagneticCursor>
         <div className="textRef ml-6.5 text-[clamp(1.7rem,3.2vw,5rem)] font-semibold text-[#c0c0c0] -mt-6 md:-mt-7 lg:-mt-10">
           Full Stack Developer
         </div>
@@ -40,7 +43,7 @@ const IntroAnimation = () => {
           <div className="flex flex-col md:flex-row w-full justify-between px-4 ">
             <div className="flex textRef flex-row w-full md:w-1/2 items-center px-3 justify-between gap-x-8 md:gap-x-12">
               <div className="flex flex-col items-center text-[#78716C]">
-                <span className="font-semibold leading-tight">OUTBREAK</span>
+                <span className="font-semibold text-[#F59E0B] leading-tight">OUTBREAK</span>
                 <span className="text-[11px]">20+ projects</span>
               </div>
               <div className="flex flex-col text-[#78716C] items-center w-full md:w-[340px] font-semibold leading-relaxed text-[clamp(0.85rem,1.5vw,1.1rem)]">
@@ -80,11 +83,11 @@ const IntroAnimation = () => {
         </div>
       </div>
 
-      <div className="textRef text-[clamp(5rem,11vw,12rem)] tracking-tight leading-[clamp(4.5rem,8.5vw,9rem)] font-semibold mt-12 lg:mt-7 px-4 text-[#1C1917]">
+      <div className="textRef text-[clamp(5.3rem,11vw,12rem)] tracking-tight leading-[clamp(4.5rem,8.5vw,9rem)] font-semibold mt-12 lg:mt-7 px-4 text-[#1C1917]">
         BUILDING IDEAS THAT LIVES ON WEB
       </div>
 
-      <div className="textRef fixed right-4 bottom-4 h-12 p-1 border border-gray-700 rounded-full">
+      <div className="textRef fixed right-4 bottom-4 h-12 p-1 border border-gray-700 rounded-full z-40">
         {/* <ArrowDown className="w-5 h-10" /> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
