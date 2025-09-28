@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import { Download } from "lucide-react";
 
 const IntroAnimation = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const IntroAnimation = () => {
     <>
       <div className="flex flex-col justify-between w-full overflow-hidden items-start bg-gradient-to-b from-white via-[#FAFAF9] to-white text-[#222939]">
         <div className="flex flex-col mt-10">
-          <div className="textRef text-[clamp(3rem,5.7vw,7rem)] text-[#1C1917] font-semibold ml-6">
+          <div className="textRef text-[clamp(3.2rem,5.7vw,7rem)] text-[#1C1917] font-semibold ml-6">
             NIKHIL MISHRA
           </div>
           <div className="textRef ml-6.5 text-[clamp(1.7rem,3.2vw,5rem)] font-semibold text-[#c0c0c0] -mt-6 md:-mt-7 lg:-mt-10">
@@ -35,17 +36,20 @@ const IntroAnimation = () => {
 
         <div className="textRef w-52 h-52 absolute right-1/4 rounded-full bg-[#F59E0B] blur-[170px]" />
 
-        <div className="flex flex-row w-full mt-10 md:mt-14 lg:mt-12 items-end justify-between">
+        <div className="flex flex-row w-full mt-10 items-end justify-between">
           <div className="flex flex-row items-center justify-between w-full">
             <div className="flex flex-col md:flex-row w-full justify-between px-4 ">
               <div className="flex textRef flex-row w-full md:w-1/2 items-center px-3 justify-between gap-x-8 md:gap-x-12">
-                <div className="flex flex-col items-start text-[#78716C]">
-                  <span className="font-semibold text-[#F59E0B] leading-tight">
-                    OUTBREAK LAB
+                <a
+                  href={"/resume.pdf"}
+                  download={"Nikhil-Mishra-Resume.pdf"}
+                  className="flex flex-col w-1/3 items-start text-[#78716C]"
+                >
+                  <span className=" rounded-full flex text-[#1C1917] bg-[#ffb536] font-medium px-4 py-2">
+                    Resume <Download className="w-4 h-4 ml-2 mt-1" />
                   </span>
-                  <span className="text-[12px] ml-1">20+ projects</span>
-                </div>
-                <div className="flex flex-col text-[#78716C] items-center w-full md:w-[360px] font-semibold leading-relaxed text-[clamp(0.85rem,1.5vw,1rem)]">
+                </a>
+                <div className="flex flex-col text-[#78716C] items-center w-3/4 md:w-[360px] font-semibold leading-relaxed text-[clamp(0.85rem,1.5vw,1rem)]">
                   I publish my work openly on GitHub & Colab, and I’m driven to
                   learn fast, ship often, and build with impact.
                 </div>
@@ -57,7 +61,7 @@ const IntroAnimation = () => {
                   <p>WEBSITES</p>
                   <p>UI/UX</p>
                 </div>
-                <div className="group textRef flex flex-row justify-between items-center gap-x-4 rounded-full text-[#1C1917] bg-[#fdaf29] font-medium px-4 py-2 mt-6 md:mt-8">
+                <div className="group textRef flex flex-row w-full cursor-pointer md:w-fit justify-center md:justify-between items-center gap-x-4 rounded-full text-[#1C1917] text-lg bg-[#fdaf29] font-medium px-4 py-2 mt-6 md:mt-8">
                   <p>LET&apos;S TALK</p>
                   {/* <ArrowDownRight className="w-5 h-5 -rotate-[24deg] group-hover:-rotate-45" /> */}
                   <svg
@@ -86,11 +90,10 @@ const IntroAnimation = () => {
           BUILDING IDEAS THAT LIVES ON WEB
         </div>
 
-        <div className="textRef fixed right-4 bottom-4 h-12 p-1 border border-gray-700 rounded-full z-40">
-          {/* <ArrowDown className="w-5 h-10" /> */}
+        <div className="textRef fixed right-4 bottom-4 h-12 p-1 border border-gray-400 rounded-full z-40 mix-blend-difference">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 animate-bounce mt-2"
+            className="w-6 h-6 animate-bounce mt-2 mix-blend-difference text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -99,6 +102,7 @@ const IntroAnimation = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={1}
+              className="mix-blend-difference"
               d="M12 4V20M12 20L18 14M12 20L6 14"
             />
           </svg>

@@ -16,32 +16,36 @@ const ProjectPage = () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(() => {
-    gsap.utils.toArray<HTMLElement>(".hero").forEach((row) => {
-      gsap.fromTo(
-        row,
-        { opacity: 0, y: 100 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: row,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-          // delay: i * 0.1,
-        }
-      );
-    });
-  }, []);
+useGSAP(() => {
+  gsap.utils.toArray<HTMLElement>(".hero").forEach((row) => {
+    gsap.fromTo(
+      row,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: row,
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+
+  return () => {
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+  };
+}, []);
+
 
   return (
     <div className="w-full h-auto mt-44 text-[#1c1c1c] py-4 overflow-y-hidden">
       <div className="lg:text-[82px] md:text-end text-6xl md:text-7xl my-24 text-center md:px-2 max-w-6xl mx-auto flex justify-center md:justify-end mt-8">
         <MagneticCursor>
-          <span className="bg-[#F59E0B] cursor-context-menu h-48 w-48 rounded-full flex items-center justify-center text-[40px] font-semibold text-white">
+          <span className="bg-[#fdaf29] cursor-context-menu h-48 w-48 rounded-full flex items-center justify-center text-[40px] font-semibold text-white">
             PROJECTS
           </span>
         </MagneticCursor>

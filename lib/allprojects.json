@@ -1,0 +1,123 @@
+[
+{
+"id": "p1",
+"title": "Pinterest Clone",
+"slug": "pinterest-clone",
+"description": "A full-stack image-sharing application inspired by Pinterest. Implements JWT authentication, user profiles, image uploads and optimized media storage (Cloudinary). Features include pinning, searching, and responsive galleries with progressive image loading — built for real-world usage with React on the frontend and a Node + Express + MongoDB backend.",
+"images": ["/pinterest.png"],
+"tags": ["React", "Node.js", "Express", "MongoDB", "Cloudinary", "Tailwind"],
+"github": "https://github.com/OutBreak778/pinterest-clone",
+"demo": null,
+"featured": true
+},
+{
+"id": "p2",
+"title": "Rate Limit API",
+"slug": "rate-limit-api",
+"description": "A full-stack Pinterest-inspired app built with React.js + Tailwind + Node.js + Express + MongoDB. Supports JWT auth, image sharing, user profiles, protected routes, and real-time session handling. Frontend deployed on Vercel, backend on Render with secure CORS and credential-based cookies.",
+"images": ["/rate-limit.png"],
+"tags": ["Node.js", "Express", "API", "Security"],
+"github": "https://github.com/OutBreak778/rate-limit-api",
+"demo": "https://pinterest-clone-lime-nu.vercel.app",
+"featured": false
+},
+{
+"id": "p2.1",
+"title": "Foldera CLI",
+"slug": "foldera-cli",
+"description": "A fast, customizable command-line scaffolding tool to bootstrap Node.js and full-stack projects. Provides opinionated templates, CLI flags for customization, and generates project boilerplate in seconds — accelerating setup and enforcing consistent project structure for teams and solo developers.",
+"images": ["/foldera.png"],
+"tags": ["Node.js", "CLI", "Productivity", "Automation"],
+"github": "https://github.com/OutBreak778/custom-cli",
+"demo": "https://www.npmjs.com/package/foldera",
+"featured": true
+},
+{
+"id": "p3",
+"title": "Fetchout API",
+"slug": "fetchout-api",
+"description": "Fetchout is a developer-friendly API hub where users can log in, generate secure API keys, and instantly access ready-to-use public APIs like weather, jokes, and user data. It’s a lightweight, beginner-focused alternative to RapidAPI built for learning, testing, and rapid integration",
+"images": ["/api.png"],
+"tags": ["TypeScript", "Node.js", "API", "Auth"],
+"github": "https://github.com/OutBreak778/fetchout-api",
+"demo": "https://fetchout-api.vercel.app",
+"featured": false
+},
+{
+"id": "p4",
+"title": "Chat with PDF",
+"slug": "chat-with-pdf",
+"description": "An AI-powered PDF platform that enables users to upload, view, and interact with documents. Built with Next.js, Clerk (auth), Convex API and TipTap editor — it supports text extraction, contextual Q&A over document content, inline editing/annotations and a smooth reading experience for large PDFs.",
+"images": ["/chat-with-pdf.png"],
+"tags": ["Next.js", "Clerk", "Convex", "TipTap", "TypeScript"],
+"github": "https://github.com/OutBreak778/chat-with-pdf",
+"demo": "https://budget-outbreak.vercel.app",
+"featured": false
+},
+{
+"id": "p5",
+"title": "Budget Tracker",
+"slug": "budget-outbreak",
+"description": "A fast, flexible personal finance platform with real-time updates for expense tracking and budgeting. Features include categorized expenses, quick transaction entry, balance overviews, and responsive charts — designed to help users monitor spending and make data-driven financial decisions.",
+"images": ["/budget-tracker.png"],
+"tags": ["Next.js", "React", "Tailwind", "Realtime"],
+"github": "https://github.com/OutBreak778/budget-outbreak",
+"demo": null,
+"featured": false
+},
+{
+"id": "p9",
+"title": "Helmet Detection Model",
+"slug": "helmet-detection-model",
+"description": "A computer vision project implementing a Faster R-CNN model in PyTorch to detect helmet usage in images. Includes dataset preprocessing, training notebooks, evaluation metrics, and inference scripts — built as a foundation for real-time safety systems or traffic enforcement prototypes.",
+"images": ["/output.png"],
+"tags": ["PyTorch", "Faster-RCNN", "Computer Vision"],
+"github": "https://github.com/OutBreak778/helmet-detection-model",
+"demo": null,
+"featured": false
+},
+{
+"id": "p10",
+"title": "Simple SaaS Page",
+"slug": "simple-saas-page",
+"description": "A clean, reusable landing page template for SaaS products built with Next.js, Tailwind and Framer Motion. Includes hero, features, pricing and CTA sections with responsive layouts and smooth micro-interactions — easy to customize for demos or MVP landing pages.",
+"images": ["/simple-saas-page.png"],
+"tags": ["Next.js", "Tailwind", "Framer Motion"],
+"github": "https://github.com/OutBreak778/simple-saas-page",
+"demo": "https://simple-saas-page.vercel.app",
+"featured": false
+},
+{
+"id": "p14",
+"title": "Personal Chatbot",
+"slug": "personal-chatbot",
+"description": "A context-aware chatbot built with Next.js and TypeScript that responds based on custom input data. Designed for personalized interactions using prompt engineering and session context, it can be adapted to answer domain-specific queries or act as a personal assistant with conversational history.",
+"images": ["/personal-chatbot.png"],
+"tags": ["TypeScript", "Next.js", "Chatbot", "OpenAI"],
+"github": "https://github.com/OutBreak778/personal-chatbot",
+"demo": "https://personal-chatbot-brown.vercel.app",
+"featured": false
+},
+{
+"id": "p16",
+"title": "Outbreak AI Spark",
+"slug": "outbreak-ai-spark",
+"description": "A multipurpose AI playground that supports code review, content generation, and media (audio/video) generation workflows. Built with modern web tooling and Clerk for authentication — it provides a flexible interface to experiment with AI-assisted developer and creative workflows.",
+"images": ["/spark-ai.png"],
+"tags": ["TypeScript", "AI", "Next.js", "ChatGPT", "Clerk"],
+"github": "https://github.com/OutBreak778/outbreak-ai-spark",
+"demo": "https://outbreak-ai-spark.vercel.app",
+"featured": false
+},
+{
+"id": "p20",
+"title": "Portfolio",
+"slug": "nikhil-mishra-portfolio",
+"description": "A personal portfolio site showcasing projects, GitHub repositories and deployed demos. Designed for clarity and performance — responsive, SEO-friendly, and built to present technical work, case studies and contact details for recruiters or collaborators.",
+"images": ["/nikhil-mishra.png"],
+"tags": ["Next.js", "TypeScript", "Vercel"],
+"github": "https://github.com/OutBreak778/nikhil-mishra-portfolio",
+"demo": "https://nikhil-mishra-portfolio.vercel.app",
+"featured": true
+}
+]

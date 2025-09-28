@@ -46,7 +46,6 @@ export const ProjectCard = ({ index, data, setModal }: ProjectCardProps) => {
     e.stopPropagation();
     e.preventDefault();
     if (!url) return;
-    // open in new tab, avoid Next router which might interfere for external host
     window.open(url, "_blank", "noopener,noreferrer");
   };
   return (
@@ -56,7 +55,7 @@ export const ProjectCard = ({ index, data, setModal }: ProjectCardProps) => {
       onMouseLeave={handleMouseLeave} // reset index
       className="group relative flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto h-[350px] md:h-[200px] overflow-hidden cursor-pointer md:hover:opacity-40"
     >
-      <div className="hidden md:flex px-4 items-center justify-between w-full tracking-normal transition-all duration-300 hover:shadow-md">
+      <div className="hidden md:flex px-4 items-center justify-between w-full tracking-normal transition-all duration-300">
         <div className="text-[80px] font-semibold transition-transform duration-700 group-hover:-translate-x-2">
           {data.title}
           {data.featured && (
