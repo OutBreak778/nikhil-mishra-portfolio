@@ -1,7 +1,6 @@
 import nodemailer from "nodemailer";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { name, email, services, message } = body;
