@@ -7,9 +7,11 @@ import NavRoute from "./NavRoute";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Circle } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
+  const pathName = usePathname()
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -27,10 +29,10 @@ const Navbar = () => {
     return () => ctx.revert(); // ✅ kills all animations on unmount
   }, []);
   return (
-    <header className="flex justify-between px-4 py-3">
+    <header className={cn("flex justify-between px-4 py-3", pathName === "/contacts" && "bg-black text-white")}>
       <Link href="/" className="navRef flex justify-center items-center gap-2">
         <div className="flex">
-          <div className="w-9 h-9 flex items-center justify-center text-4xl font-sans p-1 border-[2.3px] border-gray-900 rounded-full">
+          <div className={cn("w-9 h-9 flex items-center justify-center text-4xl font-sans p-1 border-[2.3px] border-gray-900 rounded-full", pathName === "/contacts" && "border-gray-50")}>
             <Circle className="w-8 h-8" />
           </div>
         </div>

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { Download } from "lucide-react";
+import Link from "next/link";
 
 const IntroAnimation = () => {
   useEffect(() => {
@@ -62,7 +63,7 @@ const IntroAnimation = () => {
                   <p>UI/UX</p>
                 </div>
                 <div className="group textRef flex flex-row w-full cursor-pointer md:w-fit justify-center md:justify-between items-center gap-x-4 rounded-full text-[#1C1917] text-lg bg-[#fdaf29] font-medium px-4 py-2 mt-6 md:mt-8">
-                  <p>LET&apos;S TALK</p>
+                  <Link href="/contacts">LET&apos;S TALK</Link>
                   {/* <ArrowDownRight className="w-5 h-5 -rotate-[24deg] group-hover:-rotate-45" /> */}
                   <svg
                     width="100%"

@@ -29,7 +29,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="slideRef max-w-full mx-auto transition-all duration-400 h-full bg-black text-gray-50 z-10 -mt-24">
+    <div className="slideRef max-w-full mx-auto transition-all duration-400 h-full bg-black text-gray-50 z-10 -mt-2">
       <motion.div
         className="mask text-4xl md:text-[57px] md:leading-16 w-full md:px-2 px-6 h-full flex items-center justify-center cursor-context-menu"
         animate={
@@ -50,13 +50,11 @@ const About = () => {
             setIsHovered(false);
           }}
         >
-          Proficient in Next.js, Node.js, Python, C++, and TailwindCSS, I merge
-          technical expertise with creative problem-solving to craft seamless
-          and engaging digital experiences. My projects emphasize engineering
-          precision and user-focused design—delivering solutions that are
-          efficient, scalable and intuitive. I’m eager to learn new toolkit,
-          learning and building new products that push both usability and
-          performance further.
+          Proficient in Next.js, Node.js, Python, C++, TailwindCSS, and more, I
+          combine technical expertise with creative problem-solving to craft
+          seamless digital experiences. My projects focus on efficient,
+          scalable, and intuitive solutions. I’m always eager to explore new
+          tools and build products that push usability and performance further.
         </p>
       </motion.div>
       <div className="w-full text-4xl md:text-[57px] md:leading-16 h-full md:px-2 px-6 flex items-center justify-center cursor-context-menu">

@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
@@ -37,7 +38,7 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-400 -mt-7">
               <h2 className="text-lg font-semibold mb-4">Contact</h2>
               <li className="flex hover:text-white cursor-pointer">
-                <Mail className="w-5 h-5 mr-2" /> outbreak778@gmail.com
+                <Mail className="w-5 h-5 mr-2" /> web.coder.778@gmail.com
               </li>
               <li className="flex hover:text-white cursor-pointer">
                 <Phone className="w-5 h-5 mr-2" /> +91 7972458025
@@ -65,7 +66,6 @@ const Footer = () => {
                 className="bg-white p-[2px] rounded-[3px]"
                 alt="linkedin"
               />
-              {/* <Github className="w-5 h-5 hover:text-white cursor-pointer text-gray-400" /> */}
             </Link>
             <Link
               href="https://www.linkedin.com/in/nikhil-mishra-outbreak"
@@ -79,7 +79,6 @@ const Footer = () => {
                 className="bg-white p-[2px] rounded-[3px]"
                 alt="linkedin"
               />
-              {/* <Linkedin className="w-5 h-5 hover:text-white cursor-pointer text-gray-400" /> */}
             </Link>
             <Link href="https://leetcode.com/u/OutBreak_code01/" target="_blank">
             <Image

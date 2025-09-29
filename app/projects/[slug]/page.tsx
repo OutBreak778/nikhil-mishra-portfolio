@@ -1,11 +1,5 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
-// import Link from "next/link";
-import allprojects from "@/lib/allprojects.json"; // 👈 you should export types + array from /lib/projects
-import Link from "next/link";
-import { ExternalLink, Github } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { useEffect } from "react";
+import allprojects from "@/lib/allprojects.json";  
 import { Projects } from "@/components/Projects";
 
 export default async function page({

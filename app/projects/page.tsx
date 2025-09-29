@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import gsap from "gsap";
 import React, { useEffect, useState } from "react";
-// import project from "@/lib/project.json";
-import allprojects from "@/lib/allprojects.json"
+import allprojects from "@/lib/allprojects.json";
 import Modal from "@/components/Modal";
 
 import { Dispatch, SetStateAction } from "react";
@@ -12,7 +12,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
-
 
 const page = () => {
   const [modal, setModal] = useState({ isActive: false, index: 0 });
@@ -30,41 +29,40 @@ const page = () => {
         ease: "power3.out",
       });
     });
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
 
     return () => ctx.revert(); // ✅ kills all animations on unmount
   }, []);
-  const total = allprojects.length
-return (
-  <div className="w-full min-h-screen flex items-start justify-center mt-6">
-    <div className="w-full h-auto max-w-6xl mx-auto text-[#1c1c1c] py-4 overflow-y-hidden mt-12">
-
+  const total = allprojects.length;
+  return (
+    <div className="w-full min-h-screen flex items-start justify-center mt-6">
+      <div className="w-full h-auto max-w-6xl mx-auto text-[#1c1c1c] py-4 overflow-y-hidden mt-12">
         <p className="projectRef text-3xl font-medium text-muted-foreground ml-2 md:-ml-1 absolute -mt-9">
           Recent Works - ({total})
         </p>
-      <div className="py-2 divide-y-2 max-w-6xl mx-auto border-t-2 divide-gray-300/80">
+        <div className="py-2 divide-y-2 max-w-6xl mx-auto border-t-2 divide-gray-300/80">
+          {allprojects.map((item, index) => (
+            <ProjectCard
+              key={item.id}
+              index={index}
+              modal={modal}
+              setModal={setModal}
+              data={item}
+              className="projectRef"
+            />
+          ))}
 
-        {allprojects.map((item, index) => (
-          <ProjectCard
-            key={item.id}
-            index={index}
-            modal={modal}
-            setModal={setModal}
-            data={item}
-            className="projectRef"
-          />
-        ))}
-
-        <Modal modal={modal} projects={allprojects} />
- 
+          <Modal modal={modal} projects={allprojects} />
+        </div>
       </div>
     </div>
-  </div>
-);
-
+  );
 };
 
 export default page;
-
 
 interface ProjectCardProps {
   data: {
@@ -84,10 +82,15 @@ interface ProjectCardProps {
   };
   setModal: Dispatch<SetStateAction<{ isActive: boolean; index: number }>>;
   index: number;
-  className?: string
+  className?: string;
 }
 
-const ProjectCard = ({ index, data, setModal, className }: ProjectCardProps) => {
+const ProjectCard = ({
+  index,
+  data,
+  setModal,
+  className,
+}: ProjectCardProps) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -115,7 +118,10 @@ const ProjectCard = ({ index, data, setModal, className }: ProjectCardProps) => 
       href={`/projects/${data.slug}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave} // reset index
-      className={cn("group relative flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto h-[350px] md:h-[170px] overflow-hidden cursor-pointer md:hover:opacity-40", className)}
+      className={cn(
+        "group relative flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto h-[350px] md:h-[170px] overflow-hidden cursor-pointer md:hover:opacity-40",
+        className
+      )}
     >
       <div className="hidden md:flex px-4 items-center justify-between w-full tracking-normal transition-all duration-300">
         <div className="text-[60px] font-medium transition-transform duration-700 group-hover:-translate-x-2">
@@ -143,7 +149,7 @@ const ProjectCard = ({ index, data, setModal, className }: ProjectCardProps) => 
           <h3 className="text-xl font-semibold group-hover:text-[25px] transition-all duration-300 text-black group-hover:text-gray-700">
             {data.title}
           </h3>
- 
+
           <p className="text-sm text-gray-600 leading-relaxed line-clamp-1">
             {data.description}
           </p>

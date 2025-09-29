@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,6 +85,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} antialiased tracking-tight min-h-screen ${outfit.className}`}
       >
+      <Toaster />
         <AnimateTransition>
           <Navbar />
           {children}
