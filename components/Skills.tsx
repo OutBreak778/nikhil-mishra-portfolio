@@ -83,9 +83,9 @@ const Skills = () => {
               "Eslint & Prettier",
             ]}
             expandedDetails={[
-              "Advanced Git workflows and branching strategies",
+              "Git workflows and branching",
               "Cloud platforms: Vercel, Render",
-              "Authentication management using Clerk",
+              "Authentication management using Clerk and JWT",
               "API testing and debugging with Postman",
               "Maintain clean, formatted code using ESLint and Prettier",
             ]}

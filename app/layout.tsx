@@ -18,11 +18,11 @@ const outfit = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "Nikhil Mishra | Portfolio",
+  title: "Nikhil Mishra",
   description:
     "Master's student in MCA, building full-stack apps & AI/ML projects.",
   icons: {
-    icon: "/logo.svg",
+    icon: "/download1.png",
   },
   metadataBase: new URL("https://www.nikhil-mishra-portfolio.vercel.app"),
 
