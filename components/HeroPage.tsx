@@ -42,7 +42,7 @@ const IntroAnimation = () => {
             <div className="flex flex-col md:flex-row w-full justify-between px-4 ">
               <div className="flex textRef flex-row w-full md:w-1/2 items-center px-3 justify-between gap-x-8 md:gap-x-12">
                 <a
-                  href={"/Nikhil_Mishra-experience-1.pdf"}
+                  href={"/Nikhil_Mishra_resume (1).pdf"}
                   download={"Nikhil-Mishra-Resume.pdf"}
                   className="flex flex-col w-1/3 items-start text-[#78716C]"
                 >
